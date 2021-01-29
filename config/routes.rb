@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   get 'fusion', to: 'junction_records#fusion'
 
   get 'identical', to: 'junction_records#identical'
+  
+  resources :first_table_record, only: [:index]
+
 end
