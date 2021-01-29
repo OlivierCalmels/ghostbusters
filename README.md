@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Team
+Victor Branger, Olivier Calmels, Victor Branger, Alexandre Wotawa.
 
-Things you may want to cover:
+## Db scheme
+https://kitt.lewagon.com/db/24779
 
-* Ruby version
+## Trello
+https://trello.com/b/AANCVIVc/iiep-ghostbuster
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Miro
+https://miro.com/app/board/o9J_lW5raoY=/
