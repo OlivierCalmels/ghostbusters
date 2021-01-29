@@ -14,37 +14,51 @@
 #   teacher_sex: MyString
 #   dob: 2021-01-29
 
-abe:
+f1:
   emis_number: 1
   teacher_surname: Abe
   teacher_name: Beans
   teacher_sex: male
   dob: 1990-01-29
 
-beatrice:
+f2:
   emis_number: 2
   teacher_surname: Beatrice
   teacher_name: Mango
   teacher_sex: female
   dob: 1981-03-02
 
-connor:
+f3:
   emis_number: 3
   teacher_surname: Connor
   teacher_name: McGregor
   teacher_sex: male
   dob: 1987-05-12
 
-deborah:
+f4:
   emis_number: 4
   teacher_surname: Deborah
   teacher_name: Jordan
   teacher_sex: female
   dob: 1976-10-19
 
-edgar:
+f5:
   emis_number: 5
   teacher_surname: Edgar
   teacher_name: Mustache
   teacher_sex: male
+  dob: 1984-07-20
+
+f6:
+  emis_number: 6
+  teacher_surname: Edgar
+  teacher_name: Mustache
+  teacher_sex: male
+  dob: 1984-07-20
+
+f7:
+  emis_number: 7
+  teacher_surname: Edgar
+  teacher_name: Jordan
+  teacher_sex: female
   dob: 1984-07-20

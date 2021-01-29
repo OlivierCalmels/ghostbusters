@@ -1,11 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_table_record: one
-  second_table_record: one
-  score: 1.5
+# one:
+#   first_table_record: one
+#   second_table_record: one
+#   score: 1.5
 
-two:
-  first_table_record: two
-  second_table_record: two
-  score: 1.5
+# two:
+#   first_table_record: two
+#   second_table_record: two
+#   score: 1.5
+
+j1:
+  first_table_record: 1
+  second_table_record: 1
+  score: 1
+
+j2:
+  first_table_record: 2
+  second_table_record: 2
+  score: 1
+
+
