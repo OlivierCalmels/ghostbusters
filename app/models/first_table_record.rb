@@ -1,0 +1,2 @@
+class FirstTableRecord < ApplicationRecord
+end
