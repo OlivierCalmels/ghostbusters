@@ -1,7 +1,7 @@
 # README
 
 ## Team
-Victor Branger, Olivier Calmels, Victor Branger, Alexandre Wotawa.
+Victor Branger, Olivier Calmels, Elsa Lebas, Alexandre Wotawa.
 
 ## Db scheme
 https://kitt.lewagon.com/db/24779
