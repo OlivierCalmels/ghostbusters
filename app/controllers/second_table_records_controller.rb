@@ -1,0 +1,3 @@
+class SecondTableRecordsController < ApplicationController
+
+end

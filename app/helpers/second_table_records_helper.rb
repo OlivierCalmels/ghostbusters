@@ -1,0 +1,2 @@
+module SecondTableRecordsHelper
+end

@@ -1,0 +1,2 @@
+module FirstTableRecordsHelper
+end

@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'fusion', to: 'junction_records#fusion'
 
   get 'identical', to: 'junction_records#identical'
+
+  get 'csv_import', to: 'csv_imports#csv_import'
   
-  resources :first_table_record, only: [:index]
+  resources :first_table_records, only: [:index]
 
 end
