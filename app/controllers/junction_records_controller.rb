@@ -56,4 +56,29 @@ class JunctionRecordsController < ApplicationController
     score = String::Similarity.levenshtein_distance junction_record.first_table_record.teacher_name, junction_record.second_table_record.name
     return score
   end
+
+  def get_t1_associations(array)
+    # return 
+    #"{["Guvyugu", "2Nrydoss", Mon, 16 Jan 1978]=>
+    #    [#<FirstTableRecord id: 217, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:00.699405000 +0000", updated_at: "2021-01-30 11:02:00.699405000 +0000">, 
+         #<FirstTableRecord id: 222, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:00.757533000 +0000", updated_at: "2021-01-30 11:02:00.757533000 +0000">, 
+         #<FirstTableRecord id: 227, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:00.814470000 +0000", updated_at: "2021-01-30 11:02:00.814470000 +0000">, 
+         #<FirstTableRecord id: 232, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:00.872564000 +0000", updated_at: "2021-01-30 11:02:00.872564000 +0000">, 
+         #<FirstTableRecord id: 237, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:00.937349000 +0000", updated_at: "2021-01-30 11:02:00.937349000 +0000">, 
+         #<FirstTableRecord id: 242, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:00.997268000 +0000", updated_at: "2021-01-30 11:02:00.997268000 +0000">, 
+         #<FirstTableRecord id: 247, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:01.054421000 +0000", updated_at: "2021-01-30 11:02:01.054421000 +0000">, 
+         #<FirstTableRecord id: 252, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:01.110988000 +0000", updated_at: "2021-01-30 11:02:01.110988000 +0000">, 
+         #<FirstTableRecord id: 257, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:01.169493000 +0000", updated_at: "2021-01-30 11:02:01.169493000 +0000">, 
+         #<FirstTableRecord id: 262, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16", created_at: "2021-01-30 11:02:01.226603000 +0000", updated_at: "2021-01-30 11:02:01.226603000 +0000">], 
+    # ["Itku W", "Adakma-Gdumm", Tue, 12 Apr 1988]=>
+    #   [#<FirstTableRecord id: 218, emis_number: 2, teacher_surname: "Adakma-Gdumm", teacher_name: "Itku W", teacher_sex: "Female", dob: "1988-04-12", created_at: "2021-01-30 11:02:00.705560000 +0000", updated_at: "2021-01-30 11:02:00.705560000 +0000">, 
+         #<FirstTableRecord id: 223, emis_number: 2, teacher_surname: "Adakma-Gdumm", teacher_name: "Itku W", teacher_sex: "Female", dob: "1988-04-12", created_at: "2021-01-30 11:02:00.763209000 +0000", updated_at: "2021-01-30 11:02:00.763209000 +0000">, 
+         #<FirstTableRecord id: 228, emis_number: 2, teacher_surname: "Adakma-Gdumm", teacher_name: "Itku W", teacher_sex: "Female", dob: "1988-04-1"]
+    # }"
+    array.group_by {|p| [p.teacher_name, p.teacher_surname, p.dob] }
+  end
+
+  def get_t2_associations(array)
+    array.group_by {|p| [p.name, p.surname, p.dob] }
+  end
 end
