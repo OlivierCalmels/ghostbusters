@@ -3,6 +3,9 @@ require 'csv'
 class CsvImportsController < ApplicationController
 
   def csv_import
+    JunctionRecord.destroy_all
+    FirstTableRecord.destroy_all
+    SecondTableRecord.destroy_all
     import_first_csv
     import_second_csv
   end

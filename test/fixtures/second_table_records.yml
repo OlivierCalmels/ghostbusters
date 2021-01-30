@@ -43,14 +43,14 @@ s5:
   dob: 1984-07-20
 
 s6:
-  solde_number: 7
+  solde_number: 6
   surname: Edgar
   name: Jordan
   dob: 1984-07-20
 
 s7:
   s6:
-  solde_number: 8
+  solde_number: 7
   surname: Edgar
   name: Jordan
   dob: 1984-07-20
