@@ -28,12 +28,12 @@ class JunctionRecordsController < ApplicationController
     grouped_data = grouped_data.select {|key, value| value.count == 1}
 
     t1_grouped = get_t1_associations(FirstTableRecord.all)
-    t1_grouped.each do |key, value|
-      if grouped_data.include?(key)
-        create_junction(value.first, grouped_data[key].first)
-      end
-    end
-
+    # t1_grouped.each do |key, value|
+    #   if grouped_data.include?(key)
+    #     create_junction(value.first, grouped_data[key].first)
+    #   end
+    # end
+    p t1_grouped
     # croiser T1grouped et grouped_data pour sortir
 
 
