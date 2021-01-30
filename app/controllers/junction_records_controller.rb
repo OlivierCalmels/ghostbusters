@@ -36,9 +36,6 @@ class JunctionRecordsController < ApplicationController
 
     # croiser T1grouped et grouped_data pour sortir
 
-    
-
-
 
   end
 
