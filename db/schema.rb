@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_29_204736) do
+ActiveRecord::Schema.define(version: 2021_01_30_102916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "first_table_records", force: :cascade do |t|
-    t.integer "emis_number"
+    t.string "emis_number"
     t.string "teacher_surname"
     t.string "teacher_name"
     t.string "teacher_sex"
-    t.date "dob"
+    t.string "dob"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 2021_01_29_204736) do
   end
 
   create_table "second_table_records", force: :cascade do |t|
-    t.integer "solde_number"
+    t.string "solde_number"
     t.string "surname"
     t.string "name"
-    t.date "dob"
+    t.string "dob"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

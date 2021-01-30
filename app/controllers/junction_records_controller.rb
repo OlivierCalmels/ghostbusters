@@ -24,7 +24,7 @@ class JunctionRecordsController < ApplicationController
   
   def create_junction(first_table_record, second_table_record)
     @junction_record = JunctionRecord.new(first_table_record: first_table_record, second_table_record: second_table_record)
-    @junction_record.score =calculate_score_cosine(@junction_record)
+    @junction_record.score = calculate_score_cosine(@junction_record)
     @junction_record.save
   end
 
