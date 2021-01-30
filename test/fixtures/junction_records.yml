@@ -20,4 +20,32 @@ j2:
   second_table_record: 2
   score: 1
 
+j3:
+  first_table_record: 3
+  second_table_record: 3
+  score: 1
 
+j4:
+  first_table_record: 4
+  second_table_record: 4
+  score: 1
+
+j5:
+  first_table_record: 5
+  second_table_record: 5
+  score: 1
+
+j6:
+  first_table_record: 6
+  second_table_record: 5
+  score: 1
+
+j7:
+  first_table_record: 7
+  second_table_record: 6
+  score: 1
+
+j8:
+  first_table_record: 7
+  second_table_record: 7
+  score: 1

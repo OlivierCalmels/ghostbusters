@@ -62,3 +62,10 @@ f7:
   teacher_name: Jordan
   teacher_sex: female
   dob: 1984-07-20
+
+f8:
+  emis_number: 8
+  teacher_surname: Fernand
+  teacher_name: Calimero
+  teacher_sex: male
+  dob: 1974-09-24
