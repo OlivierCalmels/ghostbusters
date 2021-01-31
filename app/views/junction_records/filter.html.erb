@@ -1,0 +1,10 @@
+<h1>Filtered 1:1 correlation</h1>
+<ul>
+  <% @alter_junction.each do |junction| %>
+    <li>
+      <%= junction.id %> - <%= junction.score %> - <%= junction.first_table_record.teacher_name %> <%= junction.first_table_record.id %> - <%= junction.second_table_record.name %> <%= junction.second_table_record.id %>
+    </li>
+  <% end %>
+</ul>
+<hr>
+<%= link_to 'Home page', root_path %>

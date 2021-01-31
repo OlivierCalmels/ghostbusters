@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'identical', to: 'junction_records#identical'
 
-  resources :csv_imports, only: [:index, :new, :create]
+  get 'filter', to: 'junction_records#filter'
 
+  resources :csv_imports, only: [:index, :new, :create]
 end

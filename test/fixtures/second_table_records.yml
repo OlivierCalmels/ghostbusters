@@ -1,13 +1,56 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  solde_number: 1
-  surname: MyString
-  name: MyString
-  dob: 2021-01-29
+# one:
+#   solde_number: 1
+#   surname: MyString
+#   name: MyString
+#   dob: 2021-01-29
 
-two:
+# two:
+#   solde_number: 1
+#   surname: MyString
+#   name: MyString
+#   dob: 2021-01-29
+
+s1:
   solde_number: 1
-  surname: MyString
-  name: MyString
-  dob: 2021-01-29
+  surname: Abe
+  name: Beans
+  dob: 1990-01-29
+
+s2:
+  solde_number: 2
+  surname: Beatrice
+  name: Mango
+  dob: 1981-03-02
+
+s3:
+  solde_number: 3
+  surname: Connor
+  name: McGregor
+  dob: 1987-05-12
+
+s4:
+  solde_number: 4
+  surname: Deborah
+  name: Jordan
+  dob: 1976-10-19
+
+s5:
+  solde_number: 5
+  surname: Edgar
+  name: Mustache
+  dob: 1984-07-20
+
+s6:
+  solde_number: 6
+  surname: Edgar
+  name: Jordan
+  dob: 1984-07-20
+
+s7:
+  s6:
+  solde_number: 7
+  surname: Edgar
+  name: Jordan
+  dob: 1984-07-20
