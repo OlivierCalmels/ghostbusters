@@ -13,6 +13,7 @@ class CsvImportsController < ApplicationController
     SecondTableRecord.delete_all
     FirstTableRecord.import(params[:file1])
     SecondTableRecord.import(params[:file2])
+    flash[:success] = "Tables 1 and 2 imported!"
     @firsts = FirstTableRecord.all
     @seconds = FirstTableRecord.all
     redirect_to new_csv_import_path
