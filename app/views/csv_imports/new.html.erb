@@ -1,14 +1,24 @@
-<h1>CSV importing</h1>
-<p>Please select your files</p>
-
-<%= form_tag csv_imports_path, multipart: true, :class => "form-inline" do%>
-  <div> 
-    <%= label_tag "Select first csv file (EMIS)" %>
-    <%= file_field_tag :file1 %>
+<div class="container text-center">
+  <br>
+  <br>
+  <br>
+  <h1>CSV importing</h1>
+  <p>Please select your files</p>
+  <%= form_tag csv_imports_path, multipart: true, :class => "form-inline" do%>
+  <div class="justify-content-around">
+    <div class="card row">
+      <div class="col-12">
+      <%= label_tag "Select first csv file (EMIS)" %>
+      <%= file_field_tag :file1 %>
+      </div>
+    </div>
+    <div class="card row">
+      <div class="col-12">
+        <%= label_tag "Select second csv file (Payroll)" %>
+        <%= file_field_tag :file2 %>
+      </div>
+    </div>
   </div>
-  <div>
-  <%= label_tag "Select second csv file (Payroll)" %>
-  <%= file_field_tag :file2 %>
-  </div>
-  <%= submit_tag "Import csv files" %>
-<% end %>
+</div>
+    <%= submit_tag "Import csv files" %>
+  <% end %>

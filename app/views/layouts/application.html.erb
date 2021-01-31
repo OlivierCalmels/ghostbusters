@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ghostbusters</title>
+    <title>Ghostbusters for UNESCO</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,10 +11,15 @@
   </head>
 
   <body>
-  <h2><%= link_to 'Home', root_path %></h2>
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"> <%= message %> </div>
-  <% end %>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <%= link_to 'Home page', root_path %>
+    </nav>
+
+    <h2><%= link_to 'Home', root_path %></h2>
+      <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"> <%= message %> </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
