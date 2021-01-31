@@ -1,0 +1,15 @@
+<p>Your files has been imported!</p>
+
+<h2>EMIS</h2>
+<ul>
+  <% @firsts.each do |record| %>
+    <li> <%"#{record.emis_number} - #{record.teacher_name}"%></li>
+  <% end %>
+</ul>
+
+<h2>Payroll</h2>
+<ul>
+  <% @seconds.each do |record| %>
+    <li> <%"#{record.solde_number} - #{record.name}"%></li>
+  <% end %>
+</ul>

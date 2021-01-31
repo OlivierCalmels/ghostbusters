@@ -1,5 +1,7 @@
 <p>Home</p>
 
-<%= link_to "Import CSV files", csv_import_path %>
-<%= link_to "fusion", fusion_path  %>
-<%= link_to "Filter", filter_path %>
+<ul>
+  <li><%= link_to "fusion", fusion_path  %></li>
+  <li><%= link_to "csv import", new_csv_import_path%></li>
+  <li><%= link_to "filter", filter_path %></li>
+</ul>
