@@ -49,7 +49,7 @@ class JunctionRecordsController < ApplicationController
     p "Initialement, il y avait #{t2_grouped.count} dans T2"
     p "Il reste #{t2_grouped_others.count} groupes dans le T2"
     p "Le traitement a duré #{first_part_end - first_part_start} secondes"
-
+    redirect_to filter_path
   end
 
   def filter#(score_limit)
