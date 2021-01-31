@@ -11,11 +11,15 @@ class CsvImportsController < ApplicationController
     JunctionRecord.delete_all
     FirstTableRecord.delete_all
     SecondTableRecord.delete_all
+    start1 = Time.now
     FirstTableRecord.import(params[:file1])
+    p start2 = Time.now - start1
     SecondTableRecord.import(params[:file2])
+    p "Total Time: #{Time.now - start1}"
+    flash[:success] = "Tables 1 and 2 imported!"
     @firsts = FirstTableRecord.all
     @seconds = FirstTableRecord.all
-    redirect_to new_csv_import_path
+    redirect_to identical_path
   end
 
 end

@@ -3,7 +3,7 @@ class SecondTableRecord < ApplicationRecord
 
   def self.import(file)
     file ? filepath = file.path : filepath="data/Payroll_crop.csv"
-    csv_option = { col_sep: ',', headers: true }
+    csv_option = { col_sep: ';', headers: true }
     CSV.foreach(filepath, csv_option) do |row|
       solde_number = row[0]
       surname = row[1]
