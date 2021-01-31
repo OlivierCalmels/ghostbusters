@@ -49,10 +49,10 @@ class JunctionRecordsController < ApplicationController
     p "Initialement, il y avait #{t2_grouped.count} dans T2"
     p "Il reste #{t2_grouped_others.count} groupes dans le T2"
     p "Le traitement a duré #{first_part_end - first_part_start} secondes"
-
+    redirect_to filter_path
   end
 
-  def filter#(score_limit)
+  def filter #(score_limit)
     @junctions = JunctionRecord.where("score >= ?", 1)
     @alter_junction = []
     @junctions.each do |junction|
@@ -62,10 +62,23 @@ class JunctionRecordsController < ApplicationController
         @alter_junction << junction
       end
     end
+    export_filter
     @alter_junction
   end
 
   private
+
+  def export_filter
+    data = [["Numéro EMIS", "teacher_surname", "teacher_name","teacher_sex","Date of birth", "Numéro Solde","Surname","First name","Date of birth"]]
+    
+    @alter_junction.each do |junction|
+      emis = junction.first_table_record
+      payroll = junction.second_table_record
+      data << [emis.emis_number, emis.teacher_surname, emis.teacher_name, emis.teacher_sex, emis.dob, payroll.solde_number, payroll.surname, payroll.name, payroll.dob]
+    end
+    p data
+    CsvExport.export({data:data})
+  end
 
   def create_junction(first_table_record, second_table_record)
     @junction_record = JunctionRecord.new(first_table_record: first_table_record, second_table_record: second_table_record)
