@@ -17,25 +17,38 @@ class JunctionRecordsController < ApplicationController
   end
 
   def identical
-    p "valeur second table"
-    p SecondTableRecord.count
-    p" qqty groupe de données"
-    grouped_data = get_t2_associations(SecondTableRecord.all)
-    p grouped_data.count
-    p "les valeurs uniques dans la table 2"
-    # HASH qui contient des lignes : 
-    #["Guvyugu", "2Nrydoss", Mon, 16 Jan 1978]=> [#<FirstTableRecord id: 217, emis_number: 1, teacher_surname: "2Nrydoss", teacher_name: "Guvyugu", teacher_sex: "Female", dob: "1978-01-16">
-    grouped_data = grouped_data.select {|key, value| value.count == 1}
-
+    # on créé les associations autour des colonnes comparables pour chaque liste : {[X, Y, Z] => [Object1, Object2...]}
     t1_grouped = get_t1_associations(FirstTableRecord.all)
-    # t1_grouped.each do |key, value|
-    #   if grouped_data.include?(key)
-    #     create_junction(value.first, grouped_data[key].first)
-    #   end
-    # end
-    p t1_grouped
-    # croiser T1grouped et grouped_data pour sortir
+    t2_grouped = get_t2_associations(SecondTableRecord.all)
+    
+    # on sélectionne dans la T2 uniquement les "keys" qui n'ont qu'un seul objet en "value" (qui n'ont dont pas de doublon dans T2)
+    t2_grouped_solo = t2_grouped.select {|key, value| value.count == 1}
+    # Ici on créé une copie de t1_grouped et t2_grouped qui nous servira par la suite à conserver une version raccourcie des tables après premier traitement
+    t1_grouped_others = get_t1_associations(FirstTableRecord.all)
+    t2_grouped_others = get_t2_associations(SecondTableRecord.all)
+    # si le traitement est lancé pour la première fois, on associe les clés 1:1 dans des JunctionRecord
+    first_part_start = Time.now
+    if JunctionRecord.count == 0
+      # pour chaque groupe de t1, on cherche si il y a une key identique dans t2_grouped_solo ([X, Y, Z] == [X, Y, Z])
+      t1_grouped.each do |key, value|
+        if t2_grouped_solo.include?(key)
+          # Si oui, on créé un JunctionRecord avec ces deux éléments (on pourrait ne pas calculer les scores et le fixer par défault)
+          create_junction(value.first, t2_grouped_solo[key].first)
+          # On prend les éléments de T1 qui ont été associés et on les retire de la liste initiale
+          t1_grouped_others.delete(key)
+          # Idem T2
+          t2_grouped_others.delete(key)
+        end
+      end
+    end
+    first_part_end = Time.now
 
+    p "#{JunctionRecord.count} ont été créées"
+    p "Initialement, il y avait #{t1_grouped.count} dans T1"
+    p "Il reste #{t1_grouped_others.count} dans le T1"
+    p "Initialement, il y avait #{t2_grouped.count} dans T2"
+    p "Il reste #{t2_grouped_others.count} groupes dans le T2"
+    p "Le traitement a duré #{first_part_end - first_part_start} secondes"
 
   end
 
